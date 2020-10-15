@@ -1,0 +1,8 @@
+.feedback-container-style{
+    height: 300px;
+    width: 300px;
+    text-align: justify;
+    box-shadow: 5px 5px 5px 5px grey;
+    padding: 20px;
+    margin: 10px;
+}

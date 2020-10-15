@@ -1,0 +1,18 @@
+.service-container-style{
+    height: 400px;
+    width: 300px;
+    text-align: justify;
+    padding: 20px;
+    margin: 10px;
+    transition: 0.3s all ease-in-out;
+}
+.service-container-style:hover{
+    box-shadow: 1px 1px 36px 12px burlywood;
+}
+.service-link-style{
+    color: black;
+}
+.service-link-style:hover{
+    text-decoration: none;
+    color: black;
+}

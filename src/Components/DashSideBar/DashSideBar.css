@@ -1,0 +1,18 @@
+ul li{
+    list-style-type: none;
+    margin: 8px 0px;
+    
+}
+.link-style{
+    text-decoration: none;
+    color: black;
+    padding: 8px 20px;
+    transition: .2s all ease-in-out;
+    
+}
+.link-style:hover{
+    text-decoration: none;
+    color: burlywood;
+    background-color: darkblue;
+    border-radius: 4px;
+}

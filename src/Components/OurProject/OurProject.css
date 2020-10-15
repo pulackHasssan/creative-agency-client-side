@@ -1,0 +1,14 @@
+.carousel-container{
+    min-height: 500px;
+    margin-top: 10px;
+    background-color: #111430;
+}
+.carousel-image{
+    margin-top: 10px;
+}
+.carousel-image img{
+    width: 280px;
+    height: 250px;
+    margin-right: 10px;
+
+}
