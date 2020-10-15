@@ -1,13 +1,12 @@
 import React from 'react';
 import "./FBContainer.css";
 const FBContainer = (props) => {
-    const {user, email, description} = props.feedback;
-  
+   const {name, email, review} = props.feedback.review;
     return (
                 <div className='feedback-container-style'>
-                <h3>{user}</h3>
+                <h3>{name}</h3>
                 <h6>{email}</h6>
-                <p>{description}</p>
+                <p>{review}</p>
             </div>
     );
 };

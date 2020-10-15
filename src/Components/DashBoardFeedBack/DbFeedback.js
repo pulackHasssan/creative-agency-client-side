@@ -10,7 +10,7 @@ const DbFeedback = () => {
          <DashSideBar/>
     </div>
     <div style={{backgroundColor: 'aliceblue'}} className="col-md-9">
-        <DashReview></DashReview>
+        <DashReview/>
     </div>
 </div>
 </div>

@@ -7,6 +7,7 @@ import Home from './Components/Home/Home';
 import ErrorPage from './Components/ErrorPage/ErrorPage';
 import DbFeedback from './Components/DashBoardFeedBack/DbFeedback';
 import DbServiceList from './Components/DashBoardService/DbServiceList';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
  export const userContext = createContext();
 function App() {
@@ -24,15 +25,15 @@ function App() {
           <Route path='/login'>
             <Login/>
           </Route>
-          <Route path='/dashboard/order'>
+          <PrivateRoute path='/dashboard/order'>
             <DashBoard/>
-          </Route>
-          <Route path='/dashboard/review'>
+          </PrivateRoute>
+          <PrivateRoute path='/dashboard/review'>
             <DbFeedback/>
-          </Route>
-          <Route path='/dashboard/Servicelist'>
+          </PrivateRoute>
+          <PrivateRoute path='/dashboard/servicelist'>
             <DbServiceList/>
-          </Route>
+          </PrivateRoute>
           <Route path='*'>
             <ErrorPage/>
           </Route>
