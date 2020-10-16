@@ -1,13 +1,14 @@
 import React from 'react';
 import "./DashServiceList.css";
 
-const DashService = (props) => {
-    const {service, details} = props.service.order; 
+const DashService = (props) => { 
+    const {order, time} = props.serve;
+
     return (
         <div className='dash-service-style float-left mr-2'>
-           <h5>{service}</h5>
-           <p>{details}</p>
-            <p><small>{props.service.time}</small></p>
+           <h5>{order.service}</h5>
+            <p>{order.details}</p>
+            <p><small>{time}</small></p>
         </div>
     );
 };

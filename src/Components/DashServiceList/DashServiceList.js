@@ -4,12 +4,11 @@ import DashService from './DashService';
 import './DashServiceList.css';
 
 const DashServiceList = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const [serves, setServes] = useState([]);
-    
+    const [loggedInUser, setLoggedInUser] = useContext(userContext);
     useEffect(()=>{
-        fetch('localhost:1000/order')
-        .then(res=>res.json())
+        fetch('https://fast-eyrie-63772.herokuapp.com/order?email='+ loggedInUser.email)
+        .then(res=> res.json())
         .then(data=> setServes(data))
         .catch(error =>{
             console.log(error)
@@ -25,7 +24,7 @@ const DashServiceList = () => {
             </div>
            <div>
            {
-                serves.map(service =><DashService service={service}></DashService>)
+                serves.map(serve =><DashService serve={serve} key={serve._id}></DashService>)
             }
            </div>
         </div>

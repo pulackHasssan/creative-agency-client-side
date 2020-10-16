@@ -8,6 +8,9 @@ import ErrorPage from './Components/ErrorPage/ErrorPage';
 import DbFeedback from './Components/DashBoardFeedBack/DbFeedback';
 import DbServiceList from './Components/DashBoardService/DbServiceList';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import AdminService from './Components/AdminService/AdminService';
+import AdminAddService from './Components/AdminAddService/AdminAddService';
+import AdminMakeAd from './Components/AdminMakeAd/AdminMakeAd';
 
  export const userContext = createContext();
 function App() {
@@ -24,6 +27,15 @@ function App() {
           </Route>
           <Route path='/login'>
             <Login/>
+          </Route>
+          <Route path='/admin/services'>
+          <AdminService/>
+          </Route>
+          <Route path='/admin/addService'>
+          <AdminAddService/>
+          </Route>
+          <Route path='/admin/makeAdmin'>
+          <AdminMakeAd/>
           </Route>
           <PrivateRoute path='/dashboard/order'>
             <DashBoard/>

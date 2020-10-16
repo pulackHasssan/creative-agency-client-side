@@ -19,7 +19,7 @@ const Navigation = () => {
       <Nav.Link>Home</Nav.Link>
       <Nav.Link>Our Portfolio</Nav.Link>
       <Nav.Link>Contact Us</Nav.Link>
-      <Nav.Link>Our Team</Nav.Link>
+      <Nav.Link><Link to='/admin/services' className="panel-link-style">Admin Panel</Link></Nav.Link>
       <Nav.Link><Link to='/login'><button className="main-button">Log In</button></Link></Nav.Link>
     </Nav>
   </Navbar.Collapse>

@@ -22,3 +22,6 @@
 .nav-link:first-child:hover{
     border-bottom: none
 }
+.panel-link-style:hover{
+    text-decoration: none;
+}

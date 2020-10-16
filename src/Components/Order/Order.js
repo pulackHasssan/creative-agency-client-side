@@ -7,8 +7,8 @@ const Order = () => {
     const [loggedInUser, setLoggedInUser] = useContext(userContext);
     const { register, handleSubmit, errors } = useForm();
     const onSubmit= data =>{
-        const orderDetails = {order: data, time: new Date()}
-       fetch('http://localhost:1000/addOrder', {
+        const orderDetails = {...loggedInUser, order: data, time: new Date().toDateString('dd/mm/yyyy')}
+       fetch('https://fast-eyrie-63772.herokuapp.com/addOrder', {
            method: 'POST',
            headers: {
                'content-type': 'application/json'
@@ -39,7 +39,12 @@ const Order = () => {
                     <br/>
                     {errors.email && <span style={{color:'red'}}>This field is required<br/></span>}
                     <br/>
-                    <input className="order-input" type="text" name="service" placeholder="Service Name" ref={register({ required: true })}/>
+                    <select className="order-input" type="text" name="service" placeholder="Service Name" ref={register({ required: true })}>
+                        <option value="Web and Mobile Design">Web and Mobile Design</option>
+                        <option value="Graphic Design">Graphic Design</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="Content Writing">Content Writing </option>
+                    </select>
                     <br/>
                     {errors.service && <span style={{color:'red'}}>This field is required<br/></span>}
                     <br/>
@@ -47,7 +52,7 @@ const Order = () => {
                     <br/>
                     {errors.details && <span style={{color:'red'}}>This field is required<br/></span>}
                     <br/>
-                    <input className="order-input" className="mr-2" name="price" type="text" placeholder="Price" ref={register} />
+                    <input className="order-input"  name="price" type="text" placeholder="Price" ref={register} />
                     <input type="file"/>
                     <br/>
                     <br/>

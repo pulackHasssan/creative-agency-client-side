@@ -4,12 +4,12 @@ import FBContainer from '../FeedBackContainer/FBContainer';
 const FeedBack = () => {
         const [feedback, setFeedback] = useState([]);
         useEffect(()=>{
-            fetch('http://localhost:1000/review')
+            fetch('https://fast-eyrie-63772.herokuapp.com/review')
             .then(res => res.json())
             .then(data=>setFeedback(data))
         }, [])
 
-    const cutFeedback = feedback.slice(0,3);
+    const cutFeedback = feedback.slice(Math.max(feedback.length - 3, 0));
     return (
         <div className='container'>
             <h2 className="text-center p-5">Our clients <span style={{color:'#85b06b'}}>Feedbacks</span></h2>

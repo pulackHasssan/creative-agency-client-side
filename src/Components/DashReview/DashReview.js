@@ -9,7 +9,7 @@ const DashReview = () => {
 
     const onSubmit = data =>{
        const reviewDetails = { review: data, time: new Date()}
-       fetch('http://localhost:1000/addReview', {
+       fetch('https://fast-eyrie-63772.herokuapp.com/addReview', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
