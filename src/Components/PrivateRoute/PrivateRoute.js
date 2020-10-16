@@ -3,15 +3,15 @@ import { Redirect, Route } from 'react-router-dom';
 import { userContext } from '../../App';
 
 
-const PrivateRoute = ({children, ...rest}) => {
-    const [loggedInUser, setLoggedInUser] = useContext(userContext);
-    return (
-        <Route
-        {...rest}
-        render={({ location }) =>
-          loggedInUser.email ? (
-            children
-          ) : (
+const PrivateRoute = ({ children, ...rest }) => {
+  const [loggedInUser, setLoggedInUser] = useContext(userContext);
+  return (
+    <Route
+      {...rest}
+      render={({ location }) =>
+        loggedInUser.email ? (
+          children
+        ) : (
             <Redirect
               to={{
                 pathname: "/login",
@@ -19,9 +19,9 @@ const PrivateRoute = ({children, ...rest}) => {
               }}
             />
           )
-        }
-      />
-    );
+      }
+    />
+  );
 };
 
 export default PrivateRoute;

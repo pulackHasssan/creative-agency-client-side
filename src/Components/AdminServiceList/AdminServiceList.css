@@ -1,0 +1,6 @@
+.table-style{
+    overflow: scroll;
+}
+th,td{
+    border: 1px solid wheat;
+}

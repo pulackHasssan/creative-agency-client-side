@@ -6,10 +6,10 @@ import "./Header.css";
 const Header = () => {
     return (
         <header className="header container-fluid">
-       <div className="container">
-       <Navigation></Navigation>
-       <HeaderInfo></HeaderInfo>
-       </div>
+            <div className="container">
+                <Navigation />
+                <HeaderInfo />
+            </div>
         </header>
     );
 };

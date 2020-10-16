@@ -9,12 +9,12 @@ import Service from '../Service/Service';
 const Home = () => {
     return (
         <div>
-            <Header/>
-            <CompanyIcon/>
-            <Service/>
-            <OurProject/>
-            <FeedBack/>
-            <Footer/>
+            <Header />
+            <CompanyIcon />
+            <Service />
+            <OurProject />
+            <FeedBack />
+            <Footer />
         </div>
     );
 };

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { userContext } from '../../App';
@@ -7,6 +7,19 @@ import "./Navigation.css";
 
 const Navigation = () => {
   const [loggedInUser, setLoggedInUser] = useContext(userContext);
+  const [isAdmin, setIsAdmin] = useState(false);
+  useEffect(()=>{
+    fetch('https://fast-eyrie-63772.herokuapp.com/checkAdmin', {
+      method: 'POST',
+      headers: {
+          'content-type': 'application/json'
+      },
+      body: JSON.stringify({email: loggedInUser.email})
+  })
+  .then(res=> res.json())
+  .then(data=> setIsAdmin(data))  
+  },[])
+
     return (
             <Navbar className="nav-text" bg="" expand="lg">
                 <Navbar.Brand> 
@@ -19,7 +32,7 @@ const Navigation = () => {
       <Nav.Link>Home</Nav.Link>
       <Nav.Link>Our Portfolio</Nav.Link>
       <Nav.Link>Contact Us</Nav.Link>
-      <Nav.Link><Link to='/admin/services' className="panel-link-style">Admin Panel</Link></Nav.Link>
+      {isAdmin &&<Nav.Link><Link to='/admin/services' className="panel-link-style">Admin Panel</Link></Nav.Link>}
       <Nav.Link><Link to='/login'><button className="main-button">Log In</button></Link></Nav.Link>
     </Nav>
   </Navbar.Collapse>

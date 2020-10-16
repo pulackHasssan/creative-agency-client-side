@@ -1,6 +1,5 @@
 import React, { createContext, useState } from 'react';
-import './App.css';
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Login from './Components/Login/Login';
 import DashBoard from './Components/DashBoard/DashBoard';
 import Home from './Components/Home/Home';
@@ -11,8 +10,10 @@ import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import AdminService from './Components/AdminService/AdminService';
 import AdminAddService from './Components/AdminAddService/AdminAddService';
 import AdminMakeAd from './Components/AdminMakeAd/AdminMakeAd';
+import './App.css';
 
- export const userContext = createContext();
+export const userContext = createContext();
+
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({});
   return (
@@ -20,38 +21,37 @@ function App() {
       <Router>
         <Switch>
           <Route exact path='/'>
-          <Home/>
+            <Home />
           </Route>
           <Route path='/home'>
-            <Home/>
+            <Home />
           </Route>
           <Route path='/login'>
-            <Login/>
+            <Login />
           </Route>
-          <Route path='/admin/services'>
-          <AdminService/>
-          </Route>
-          <Route path='/admin/addService'>
-          <AdminAddService/>
-          </Route>
-          <Route path='/admin/makeAdmin'>
-          <AdminMakeAd/>
-          </Route>
+          <PrivateRoute path='/admin/services'>
+            <AdminService />
+          </PrivateRoute>
+          <PrivateRoute path='/admin/addService'>
+            <AdminAddService />
+          </PrivateRoute>
+          <PrivateRoute path='/admin/makeAdmin'>
+            <AdminMakeAd />
+          </PrivateRoute>
           <PrivateRoute path='/dashboard/order'>
-            <DashBoard/>
+            <DashBoard />
           </PrivateRoute>
           <PrivateRoute path='/dashboard/review'>
-            <DbFeedback/>
+            <DbFeedback />
           </PrivateRoute>
           <PrivateRoute path='/dashboard/servicelist'>
-            <DbServiceList/>
+            <DbServiceList />
           </PrivateRoute>
           <Route path='*'>
-            <ErrorPage/>
+            <ErrorPage />
           </Route>
         </Switch>
       </Router>
-     
     </userContext.Provider>
   );
 }
